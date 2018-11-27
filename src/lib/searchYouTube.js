@@ -6,7 +6,7 @@ import YOUTUBE_API_KEY from '../lib/searchYouTube.js';
 var searchYouTube = (options, callback) => {
 
 // var options = {
-//   key: 'AIzaSyCU7TiHAESHvnDkPA8U2wIbsi5v1TVKOWk',
+//   key: '',
 //   query: 'react',
 //   max: 5
 // };
