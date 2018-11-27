@@ -17,7 +17,7 @@ var searchYouTube = (options, callback) => {
     'q': options.query,
     'key': options.key,
     'type': 'video',
-  }).done(callback);
+  }).done((data) => { callback(data.items); });
 
   // $.ajax({
   //   url:'https://www.googleapis.com/youtube/v3/search', 
