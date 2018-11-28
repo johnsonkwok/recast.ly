@@ -1,7 +1,8 @@
 import exampleVideoData from '../data/exampleVideoData.js';
 import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
-
+// import searchYouTube from '../lib/searchYouTube.js';
+import YOUTUBE_API_KEY from '../config/youtube.js';
 
 class App extends React.Component {
   
@@ -9,11 +10,23 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      videos: exampleVideoData,
+      videos: [],
       video: exampleVideoData[0]
     };
 
     this.handleVideoClick = this.handleVideoClick.bind(this);
+  }
+  
+  componentDidMount() {
+    this.props.searchYouTube({
+      'max': '5',
+      'query': 'disney live action',
+      'key': YOUTUBE_API_KEY
+    }, (videos) => {
+      this.setState({
+        videos: videos
+      });
+    });
   }
 
   handleVideoClick(video) {
