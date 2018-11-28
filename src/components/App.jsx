@@ -43,7 +43,8 @@ class App extends React.Component {
       'key': YOUTUBE_API_KEY
     }, (videos) => {
       this.setState({
-        videos: videos
+        videos: videos,
+        video: videos[0]
       });
     });
   }
